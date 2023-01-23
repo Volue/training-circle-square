@@ -20,6 +20,23 @@ hub.connection.on("CurrentFieldValue", (fieldId, value) => {
     appState.oxFields[fieldId].update({value})
 })
 
+hub.connection.on("Winner", (value) => {
+    var message = `Game over! Winner is ${value}`
+    console.log(message)
+    appState.exampleText.update({ 
+        value: message
+    })
+})
+
+hub.connection.on("NextUser", (value) => {
+    var message = `Next turn ${value}`
+    appState.exampleText.update({ 
+        value: message
+    })
+})
+
+
+
 // SignalR calls from backend go here
 // ----------------------------------
 
