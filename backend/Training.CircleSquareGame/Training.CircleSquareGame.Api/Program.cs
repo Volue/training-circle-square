@@ -1,6 +1,9 @@
 using Training.CircleSquareGame.Api;
+using Training.CircleSquareGame.Api.Abstract;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<IOXGame, OXGame>();
+builder.Services.AddSingleton<IDisplayText, DisplayText>();
 builder.Services.AddSignalR();
 builder.Services.AddCors(options =>
 {

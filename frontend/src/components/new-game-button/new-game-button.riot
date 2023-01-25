@@ -1,0 +1,10 @@
+<example-button>
+    <button class="button button-outline" onclick="{ () => startNewGame() }">New Game</button>
+    <script>
+    export default {
+        startNewGame() {
+            this.hub.invoke("NewGame");
+        }
+    }
+  </script>
+</example-button>

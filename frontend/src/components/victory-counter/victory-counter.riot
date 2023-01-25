@@ -1,0 +1,15 @@
+<victory-counter>
+    <p>O won { state.oVictoriesCount } times | X won { state.xVictoriesCount } times</p>
+    <script>
+    export default {
+        onMounted() {
+            this.appState.victoryCounter = this
+            this.update({
+                oVictoriesCount: 0,
+                xVictoriesCount: 0
+            })
+            this.hub.invoke("GetVictoryCount");
+        }
+    }
+  </script>
+</victory-counter>
